@@ -5,6 +5,8 @@ body {
     color: #ffffff;
     font-family: 'Inter', sans-serif;
   }
+
+  /*INICIO DA SESSÃO*/
   
   .hero {
     display: flex;
@@ -46,6 +48,9 @@ body {
   .btn:hover {
     background-color: #00cccc;
   }
+
+
+
     /*Final de sessão*/
 
   .benefits {
@@ -311,45 +316,74 @@ body {
     }
   }
 
+/*FINAL DE SESSÃO*/
+  
+.guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+}
 
-  
-  .final-cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #00ffff 0%, #00cccc 100%);
-    text-align: center;
-    color: #000;
+.guarantee h2 {
+  font-size: 2rem;
+  color: #33ff00;
+  margin-bottom: 30px;
+}
+
+.guarantee-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.guarantee-content img {
+  width: 120px;
+  height: auto;
+}
+
+.guarantee-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Estilo do Botão */
+.guarantee .btn {
+  background-color: #33ff00;
+  color: #121212;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.guarantee .btn:hover {
+  background-color: #00cc00;
+  transform: translateY(-5px);
+}
+
+/* Responsividade para telas maiores */
+@media (min-width: 768px) {
+  .guarantee-content {
+    flex-direction: row;
+    text-align: left;
   }
-  
-  .final-cta h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+
+  .guarantee-content img {
+    margin-right: 20px;
   }
-  
-  .final-cta p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .btn-comprar {
-    background-color: #3cff00;
-    color: #2bff00;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-comprar:hover {
-    background-color: #222;
-  }
-  
+}
+
 
   .faq {
     display: flex;
@@ -570,5 +604,46 @@ body {
   
   .whatsapp-top img:hover {
     transform: scale(1.1);
+  }
+  
+  #video-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: slideIn 1.5s forwards;
+  }
+  
+  .video-wrapper {
+    width: 90%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 0 20px #000;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  @keyframes slideIn {
+    to {
+      left: 0;
+    }
+  }
+
+  
+  .slide-in {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .slide-in.show {
+    opacity: 1;
+    transform: translateX(0);
   }
   

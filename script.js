@@ -25,6 +25,33 @@
   setInterval(updateCountdown, 1000);
   updateCountdown();
 
+  
+  const video = document.getElementById('intro-video');
+  const overlay = document.getElementById('video-overlay');
+  const content = document.getElementById('main-content');
+
+  video.onended = function () {
+    overlay.style.display = 'none';
+    content.style.display = 'block';
+    document.body.style.overflow = 'auto';
+  };
+
+  // Evita rolagem durante o vídeo
+  document.body.style.overflow = 'hidden';
+  
+ 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.slide-in').forEach(el => observer.observe(el));
+
+
+
 
 
 
