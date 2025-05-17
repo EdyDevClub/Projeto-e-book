@@ -51,6 +51,34 @@
   document.querySelectorAll('.slide-in').forEach(el => observer.observe(el));
 
 
+  
+  
+
+  
+ 
+
+  const video = document.getElementById("introVideo");
+  const siteContent = document.getElementById("site-content");
+
+  // Garante que o conteúdo comece oculto
+  siteContent.style.display = "none";
+
+  // Verifica o tempo do vídeo a cada segundo
+  video.addEventListener("timeupdate", () => {
+    const currentTime = Math.floor(video.currentTime);
+    if (currentTime >= 300) { // 5 minutos = 300 segundos
+      siteContent.style.display = "block";
+    }
+  });
+
+
+
+
+
+
+
+
+
 
 
 

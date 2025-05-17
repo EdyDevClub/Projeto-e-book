@@ -646,4 +646,70 @@ body {
     opacity: 1;
     transform: translateX(0);
   }
-  
+
+
+
+/* Centraliza vídeo */
+#video-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #000;
+  text-align: center;
+  padding: 20px;
+}
+
+#video-wrapper h2 {
+  color: #00ffff;
+  margin-bottom: 20px;
+}
+
+/* Bloqueia rolagem do site */
+body.lock-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Oculta o conteúdo do site */
+#site-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Mostra após 5 minutos */
+#site-content.show {
+  display: block;
+  opacity: 1;
+}
+
+#video-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #000;
+  text-align: center;
+  padding: 20px;
+  z-index: 9999;
+  position: relative;
+}
+
+#video-wrapper h2 {
+  color: #00ffff;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Vídeo centralizado e menor */
+#introVideo {
+  width: 600px;
+  max-width: 90vw;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ffffaa;
+}
+
